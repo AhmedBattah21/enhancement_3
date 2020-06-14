@@ -21,13 +21,14 @@ public class DatabaseManager {
 
     public static Connection Mainconnection() {
 
-        Connection ConnMain = null;
+       Connection ConnMain = null;
 
         try {
 
-            Class.forName(DRIVER);
+            Class.forName("com.mysql.jdbc.Driver");  
+            ConnMain =DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/7F547SLaeW","7F547SLaeW","dyaKrGVdmz");  
 
-            ConnMain = DriverManager.getConnection("jdbc:sqlite:" + DB_HOME + "/" + DB_NAME, null, null);
+           
 
         } catch (SQLException | ClassNotFoundException exc) {
 
